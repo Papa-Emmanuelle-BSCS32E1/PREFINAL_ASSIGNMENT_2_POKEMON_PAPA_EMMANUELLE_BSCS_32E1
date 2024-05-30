@@ -1,0 +1,24 @@
+﻿@model List<PREFINAL_ASSIGNMENT_TWO_POKEMON_PAPA_EMMANUELLE_BSCS_32E1.Models.Pokemon>
+@{
+    ViewBag.Title = "Pokémon List";
+}
+
+<h2>Pokémon List</h2>
+
+<ul>
+    @foreach (var pokemon in Model)
+    {
+        <li>@Html.ActionLink(pokemon.Name, "Details", new { name = pokemon.Name })</li>
+    }
+</ul>
+
+<div>
+    @if (ViewBag.HasPrevious)
+    {
+        <a href="@Url.Action("Index", new { page = ViewBag.Page - 1 })">Previous</a>
+    }
+    @if (ViewBag.HasNext)
+    {
+        <a href="@Url.Action("Index", new { page = ViewBag.Page + 1 })">Next</a>
+    }
+</div>

@@ -1,0 +1,24 @@
+﻿@model PREFINAL_ASSIGNMENT_TWO_POKEMON_PAPA_EMMANUELLE_BSCS_32E1.Models.Pokemon
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<h2>@Model.Name</h2>
+
+<h3>Abilities</h3>
+<ul>
+    @foreach (var ability in Model.Abilities)
+    {
+        <li>@ability</li>
+    }
+</ul>
+
+<h3>Moves</h3>
+<ul>
+    @foreach (var move in Model.Moves)
+    {
+        <li>@move</li>
+    }
+</ul>
+
+<a href="@Url.Action("Index")">Back to List</a>
